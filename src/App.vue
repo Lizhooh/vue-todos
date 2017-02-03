@@ -6,6 +6,7 @@
 
 <script>
     import Mains from './Todos/Main/Main';
+    import './Todos/Main/css/normalize.css';
 
     export default {
         name: 'app',
@@ -29,7 +30,6 @@
     #app {
         max-width: 700px;
         margin: 0 auto;
-        text-align: center;
         padding: 20px 0;
     }
 

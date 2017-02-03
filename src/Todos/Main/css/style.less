@@ -2,6 +2,26 @@ html {
     background-color: #f1f1f1;
 }
 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #ccc;
+    opacity: 0.8;
+}
+
+::-moz-placeholder { /* Mozilla Firefox  0.89+ */
+    color: #ccc;
+    opacity: 0.8;
+}
+
+input:-ms-input-placeholder {
+    color: #ccc;
+    opacity: 0.8;
+}
+
+input::-webkit-input-placeholder {
+    color: #ccc;
+    opacity: 0.8;
+}
+
 .main-contanier {
     margin: 0 auto;
     width: 100%;
@@ -9,13 +29,15 @@ html {
     min-height: 100px;
 
     header.title {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         width: 100%;
         font-size: 100px;
         font-weight: 100;
         text-align: center;
-        color: rgba(30, 220, 30, 0.5);
+        color: rgba(30, 220, 30, 0.7);
         text-rendering: optimizeLegibility;
         padding: 20px 0;
+        text-shadow: 2px 2px 3px rgba(30, 200, 30, 0.9);
 
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -24,6 +46,4 @@ html {
         -ms-user-select: none;
         user-select: none;
     }
-
-
 }

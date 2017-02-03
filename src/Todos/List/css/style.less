@@ -1,0 +1,109 @@
+.list-contanier {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+
+    &.list-contanier-hide {
+        height: 0;
+        overflow: hidden;
+    }
+
+    > ul {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        li {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .item {
+        position: relative;
+        cursor: default;
+    }
+
+    .item-content {
+        word-break: break-all;
+        padding: 15px 60px 10px 15px;
+        margin-left: 52px;
+        display: block;
+        line-height: 1.2;
+        font-size: 20px;
+        color: #555;
+        box-sizing: border-box;
+
+        transition: all 0.3s ease-in-out;
+
+        &.completed {
+            color: #d2d2d2 !important;
+            opacity: 0.8;
+            text-decoration: line-through;
+        }
+
+        &.completed + .item-time {
+            opacity: 0.6;
+        }
+    }
+
+    .item-time {
+        font-size: 14px;
+        color: #bbb;
+        text-align: right;
+        padding: 0px 60px 10px 5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .remove {
+        display: block;
+        position: absolute;
+        top: 0; bottom: 0;
+        right: 20px;
+        margin: auto;
+        color: rgba(255, 30, 30, 0.7);
+        transition: all 0.2s ease-in-out;
+        font-size: 26px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        opacity: 0;
+        border: none;
+        outline: 0;
+        background-color: transparent;
+        padding: 0;
+
+        &:hover {
+            color: rgba(255, 30, 30, 1);
+        }
+    }
+
+    .item:hover {
+        .remove {
+            opacity: 1;
+        }
+    }
+
+    .item-toggle {
+        position: absolute;
+        top: 10px;
+        left: 18px;
+        margin: auto;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+
+        &::after {
+            transition: all 0.3s ease-in-out;
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#d6d6d6" stroke-width="3"/></svg>');
+        }
+
+        &.completed::after {
+            content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#1edc1e" stroke-width="3"/><path fill="#1edc1e" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+        }
+    }
+}

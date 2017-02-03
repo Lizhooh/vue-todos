@@ -1,13 +1,30 @@
 import uuid from 'uuid';
 
+let flag = false;
 let TodoList = [];
 
-var types = {
+const types = {
     id: String,
     text: String,
     time: String,
     completed: Boolean,
 };
+
+const D = {
+    set(key, value) {
+        localStorage.setItem(
+            key,
+            JSON.stringify(value)
+        );
+    },
+    get(key) {
+        return JSON.parse(
+            localStorage.getItem(key)
+        );
+    },
+};
+
+!flag && (TodoList = D.get('todos') || []) && (flag = true);
 
 export default class Todos {
 
@@ -24,12 +41,17 @@ export default class Todos {
             time: Date.now(),
             completed: false,
         });
+
+        D.set('todos', TodoList);
     };
 
     static removeTodo = (id) => {
         for (let i in TodoList) {
             if (TodoList[i].id === id) {
-                return void TodoList.splice(i, 1);
+                TodoList.splice(i, 1);
+
+                D.set('todos', TodoList);
+                return;
             }
         }
     };
@@ -37,7 +59,10 @@ export default class Todos {
     static completedTodo = (id) => {
         for (let i in TodoList) {
             if (TodoList[i].id === id) {
-                return void (TodoList[i].completed = !TodoList[i].completed);
+                TodoList[i].completed = !TodoList[i].completed;
+
+                D.set('todos', TodoList);
+                return;
             }
         }
     };
@@ -45,12 +70,17 @@ export default class Todos {
     static editTodo = (id, text) => {
         for (let i in TodoList) {
             if (TodoList[i].id === id) {
-                return void (TodoList[i].text = text);
+                TodoList[i].text = text;
+
+                D.set('todos', TodoList);
+                return;
             }
         }
     };
 
     static clearTodos = () => {
-        TodoList = [];
+        TodoList.splice(0, TodoList.length + 1);
+
+        D.set('todos', TodoList);
     };
 }
