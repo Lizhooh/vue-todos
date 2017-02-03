@@ -27,7 +27,7 @@
 
 <style lang="css" scoped>
     #app {
-        max-width: 800px;
+        max-width: 700px;
         margin: 0 auto;
         text-align: center;
         padding: 20px 0;
