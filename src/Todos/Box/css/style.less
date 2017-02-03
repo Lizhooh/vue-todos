@@ -67,6 +67,7 @@
         padding: 10px 30px;
         box-sizing: border-box;
         box-shadow: 0 -1px 3px #e0e0e0;
+        font-size: 15px;
 
         font-family: 'consolas', "microsoft yahei";
 
@@ -84,5 +85,25 @@
             display: inline-block;
             width: 150px;
         }
+
+        .todo-claer-completed {
+            position: relative;
+            border: 1px solid rgba(30, 220, 30, 0);
+            outline: 0;
+            background-color: #fff;
+            margin: 0;
+            border-radius: 4px;
+            transition: all 0.4s ease-in-out;
+            color: #aaa;
+            float: right;
+            top: -2px;
+            padding: 0;
+
+            &:focus {
+                border: 1px solid rgba(30, 220, 30, 1);
+            }
+        }
+
+
     }
 }

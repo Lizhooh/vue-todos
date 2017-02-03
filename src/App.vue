@@ -30,7 +30,7 @@
     #app {
         max-width: 700px;
         margin: 0 auto;
-        padding: 20px 0;
+        /*padding: 20px 0;*/
     }
 
     @media screen (max-width: 430px) {

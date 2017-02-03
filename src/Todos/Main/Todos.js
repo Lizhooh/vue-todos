@@ -46,40 +46,44 @@ export default class Todos {
     };
 
     static removeTodo = (id) => {
-        for (let i in TodoList) {
-            if (TodoList[i].id === id) {
-                TodoList.splice(i, 1);
+        TodoList.map((todo, i) => (
+            todo.id === id && TodoList.splice(i, 1)
+        ));
 
-                D.set('todos', TodoList);
-                return;
-            }
-        }
+        D.set('todos', TodoList);
+    };
+
+    static clearCompleted = () => {
+        let temp = [];
+
+        TodoList.forEach(todo => (
+            !todo.completed && temp.push(todo))
+        );
+
+        Todos.clearTodos();
+        temp.forEach(todo => TodoList.push(todo));
+
+        D.set('todos', TodoList);
     };
 
     static completedTodo = (id) => {
-        for (let i in TodoList) {
-            if (TodoList[i].id === id) {
-                TodoList[i].completed = !TodoList[i].completed;
+        TodoList.map(todo => (
+            todo.id === id && (todo.completed = !todo.completed))
+        );
 
-                D.set('todos', TodoList);
-                return;
-            }
-        }
+        D.set('todos', TodoList);
     };
 
     static editTodo = (id, text) => {
-        for (let i in TodoList) {
-            if (TodoList[i].id === id) {
-                TodoList[i].text = text;
+        TodoList.map(todo => (
+            todo.id === id && (TodoList[i].text = text)
+        ));
 
-                D.set('todos', TodoList);
-                return;
-            }
-        }
+        D.set('todos', TodoList);
     };
 
     static clearTodos = () => {
-        TodoList.splice(0, TodoList.length + 1);
+        TodoList.splice(0, TodoList.length);
 
         D.set('todos', TodoList);
     };

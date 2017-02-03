@@ -22,6 +22,10 @@
             <span class="todo-all-count">任务事项: {{ todos.length }}</span>
             <span class="todo-active-count">活动事项: {{ todoActive.length }}</span>
             <span class="todo-completed-count">完成事项: {{ todoCompleted.length }}</span>
+
+            <button class="todo-claer-completed" @click="clearCompleted">
+                清空完成事项
+            </button>
         </footer>
     </div>
 </template>
@@ -60,6 +64,9 @@
             },
             listToggleAll(event) {
                 this.listHide = !this.listHide;
+            },
+            clearCompleted(event) {
+                Todos.clearCompleted();
             },
         }
     };
