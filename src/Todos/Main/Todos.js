@@ -35,7 +35,7 @@ export default class Todos {
     static data = TodoList;
 
     static addTodo = (text) => {
-        TodoList.push({
+        TodoList.unshift({
             id: uuid.v4(),
             text: text,
             time: Date.now(),

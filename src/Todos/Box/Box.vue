@@ -11,7 +11,7 @@
                 type="text"
                 class="add-todo"
                 placeholder="todo?"
-                maxlength="100"
+                maxlength="300"
                 @keydown.enter="submit"
                 >
         </header>
@@ -19,7 +19,9 @@
             <List :todos="todos" :hide="listHide"/>
         </section>
         <footer>
-            <span class="todo-count">todo: {{ todos.length }}</span>
+            <span class="todo-all-count">任务事项: {{ todos.length }}</span>
+            <span class="todo-active-count">活动事项: {{ todoActive.length }}</span>
+            <span class="todo-completed-count">完成事项: {{ todoCompleted.length }}</span>
         </footer>
     </div>
 </template>
@@ -34,11 +36,20 @@
         components: { List },
         props: {
             todos: Array,
+
         },
         data() {
             return {
                 listHide: false,
             };
+        },
+        computed: {
+            todoActive() {
+                return this.todos.filter(todo => todo.completed === false);
+            },
+            todoCompleted() {
+                 return this.todos.filter(todo => todo.completed === true);
+            },
         },
         methods: {
             submit(event) {

@@ -3,6 +3,7 @@
         <ul>
             <li
                 v-for="(todo, i) in todos"
+
                 class="item"
                 @click.stop="completed($event, todo.id)"
                 >

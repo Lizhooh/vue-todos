@@ -40,7 +40,6 @@
 
             &.active {
                 transform: rotateZ(-90deg);
-                top: 20px;
                 color: #555;
             }
 
@@ -69,8 +68,21 @@
         box-sizing: border-box;
         box-shadow: 0 -1px 3px #e0e0e0;
 
-        .todo-count {
-            font-family: 'consolas';
+        font-family: 'consolas', "microsoft yahei";
+
+        .todo-all-count {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .todo-active-count {
+            display: inline-block;
+            width: 150px;
+        }
+
+        .todo-completed-count {
+            display: inline-block;
+            width: 150px;
         }
     }
 }
