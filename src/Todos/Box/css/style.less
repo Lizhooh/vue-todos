@@ -7,6 +7,7 @@
     font-size: 15px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     box-sizing: border-box;
+    cursor: default;
 
     > header {
         position: relative;
@@ -59,7 +60,6 @@
         width: 100%;
     }
 
-
     > footer {
         width: 100%;
         min-height: 40px;
@@ -71,17 +71,8 @@
 
         font-family: 'consolas', "microsoft yahei";
 
-        .todo-all-count {
-            display: inline-block;
-            width: 150px;
-        }
-
-        .todo-active-count {
-            display: inline-block;
-            width: 150px;
-        }
-
-        .todo-completed-count {
+        .todo-all-count, .todo-active-count, .todo-completed-count {
+            cursor: pointer;
             display: inline-block;
             width: 150px;
         }
@@ -104,6 +95,10 @@
             }
         }
 
-
+        .active {
+            transition: all 0.3s ease-in-out;
+            color: rgba(30, 200, 30, 1);
+            font-weight: bold;
+        }
     }
 }
