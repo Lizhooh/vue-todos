@@ -33,7 +33,7 @@
         /*padding: 20px 0;*/
     }
 
-    @media screen (max-width: 430px) {
+    @media screen and (max-width : 450px)  {
         #app {
             max-width: 100%;
         }

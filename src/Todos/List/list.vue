@@ -5,10 +5,13 @@
                 v-for="(todo, i) in todos"
                 :key="todo.id"
                 class="item"
-                @click.stop="completed($event, todo.id)"
                 >
 
-                <div class="item-toggle" :class="{'completed': todo.completed}"></div>
+                <div
+                    class="item-toggle"
+                    :class="{'completed': todo.completed}"
+                    @click.stop="completed($event, todo.id)"
+                    />
 
                 <div
                     class="item-content"

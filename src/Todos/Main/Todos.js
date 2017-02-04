@@ -68,8 +68,8 @@ export default class Todos {
 
     static completedTodo = (id) => {
         TodoList.map(todo => (
-            todo.id === id && (todo.completed = !todo.completed))
-        );
+            todo.id === id && (todo.completed = !todo.completed)
+        ));
 
         D.set('todos', TodoList);
     };

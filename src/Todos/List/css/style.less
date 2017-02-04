@@ -91,14 +91,20 @@
     .item-toggle {
         position: absolute;
         top: 10px;
-        left: 18px;
+        left: 17px;
         margin: auto;
         width: 35px;
         height: 35px;
-        line-height: 35px;
-        text-align: center;
+        cursor: pointer;
 
         &::after {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
             transition: all 0.3s ease-in-out;
             content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#d6d6d6" stroke-width="3"/></svg>');
         }

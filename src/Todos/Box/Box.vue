@@ -24,7 +24,7 @@
             <span class="todo-completed-count">完成事项: {{ todoCompleted.length }}</span>
 
             <button class="todo-claer-completed" @click="clearCompleted">
-                清空完成事项
+                {{ todoCompleted.length > 0 && '清空完成事项' || ''}}
             </button>
         </footer>
     </div>
