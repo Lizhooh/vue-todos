@@ -3,6 +3,8 @@
 
 todos for vue.js
 
+![view](./resource/20170204154331.png)
+
 ## Use
 
 ``` bash
